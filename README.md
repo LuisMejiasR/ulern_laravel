@@ -1,40 +1,93 @@
-# ulern_laravel
+# Sistema de Login y Registro con Laravel 11, Vue 3 y TailwindCSS
 
-# Correr proyecto de Backend:
-- cd auth-app
-- php artisan serve
+## Descripción
+Este proyecto implementa un sistema de login y registro de usuarios con las siguientes características principales:
+- Registro de usuarios con campos: nombre, apellido, número de teléfono, email y contraseña.
+- Inicio de sesión con email y contraseña.
+- Visualización del perfil del usuario registrado.
 
-# Correr proyecto de Frontend:
-- cd vue-project-laravel
-- npm install
-- npm run dev
+## Tecnologías Utilizadas
+- **Backend**: Laravel 11
+- **Frontend**: Vue 3
+- **Estilos**: TailwindCSS
+- **Base de Datos**: SQLite
+
+## Requisitos Previos
+Asegúrate de tener instalados los siguientes componentes en tu sistema:
+- PHP >= 8.1
+- Composer
+- Node.js >= 16.x
+- NPM o Yarn
+
+## Instalación y Configuración
+
+### Clonar el Repositorio
+```bash
+git clone https://github.com/LuisMejiasR/ulern_laravel.git
+cd ulern_laravel
+```
+
+### Configuración del Backend
+1. Navega al directorio del backend:
+   ```bash
+   cd auth-app
+   ```
+2. Instala las dependencias de PHP:
+   ```bash
+   composer install
+   ```
+3. Crea el archivo `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+4. Genera la clave de la aplicación:
+   ```bash
+   php artisan key:generate
+   ```
+5. Configura la base de datos en el archivo `.env`:
+   ```
+   DB_CONNECTION=sqlite
+   DB_DATABASE=./database/database.sqlite
+   ```
+6. Crea el archivo de la base de datos:
+   ```bash
+   touch database/database.sqlite
+   ```
+7. Ejecuta las migraciones:
+   ```bash
+   php artisan migrate
+   ```
+8. Inicia el servidor del backend:
+   ```bash
+   php artisan serve
+   ```
+
+### Configuración del Frontend
+1. Navega al directorio del frontend:
+   ```bash
+   cd vue-project-laravel
+   ```
+2. Instala las dependencias de Node.js:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+## Uso del Proyecto
+1. Accede a la aplicación en tu navegador:
+   - **Frontend**: `http://localhost:3000` (dependiendo de tu configuración de Vue)
+   - **Backend**: `http://127.0.0.1:8000`
+2. Regístrate como un nuevo usuario en la página de registro.
+3. Inicia sesión con las credenciales creadas.
+4. Visualiza los detalles del usuario en la página de perfil.
+
+## Buenas Prácticas Implementadas
+- Uso de migraciones para la gestión de la base de datos.
+- Manejo de errores en el backend y el frontend.
+- Estructura modular y clara del código.
+- Documentación detallada para instalación y configuración.
 
 
-
-Objetivo de la prueba:
-Implementar un sistema de login y registro utilizando las siguientes tecnologías:
-- [x] Backend: Laravel 11
-- [ ] Frontend: Vue 3
-- [ ] Estilos: TailwindCSS
-- [x] Base de Datos: SQLite
-
-Requerimientos de la prueba:
-
-Funcionalidades principales:
-- [x] Registro de usuario con los campos: nombre, apellido, número de teléfono, email y contraseña.
-- [x] Inicio de sesión con email y contraseña.
-- [ ] Página de perfil donde se visualicen los datos del usuario registrado.
-
-Detalles técnicos:
-- [x] Crea un repositorio único con el proyecto completo.
-- [ ] En el archivo README.md del repositorio, incluye las instrucciones detalladas para instalar y ejecutar el proyecto localmente.
-- [x] Se debe utilizar SQLite como base de datos para facilitar la configuración.
-
-Criterios de evaluación:
-- [ ] Funcionalidad: Que el registro, login y la vista del perfil funcionen correctamente.
-- [ ] Orden del código: Estructura clara, coherente y organizada.
-- [ ] Efectividad de la solución: Que la implementación sea eficiente y cumpla los requerimientos de manera óptima.
-- [ ] Buenas prácticas: Uso adecuado de estándares de código, manejo de errores, y claridad en la documentación.
-
-Plazo de entrega:
-Por favor, comparte el enlace al repositorio con nosotros antes del viernes 17 de enero a las 23:59.
