@@ -1,5 +1,16 @@
 # ulern_laravel
 
+# Correr proyecto de Backend:
+- cd auth-app
+- php artisan serve
+
+# Correr proyecto de Frontend:
+- cd vue-project-laravel
+- npm install
+- npm run dev
+
+
+
 Objetivo de la prueba:
 Implementar un sistema de login y registro utilizando las siguientes tecnologías:
 - [x] Backend: Laravel 11
