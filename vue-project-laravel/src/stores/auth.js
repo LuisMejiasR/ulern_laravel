@@ -37,12 +37,33 @@ export const useAuthStore = defineStore('authStore', {
             if (data.errors) {
                 this.errors = data.errors;
             } else {
+                this.errors = {};
                 localStorage.setItem('token', data.token);
                 this.user = data.user;
                 // redirecionar al usuario
-                this.router.push({ name: 'home' });
+                this.router.push({ name: 'profile' });
             }
             console.log(data);
-        }
+        },
+
+        // metodo para cerrar sesion
+        async logout() {
+            const res = await fetch('/api/logout', {
+                method: 'post',
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+            });
+
+            const data = await res.json();
+            console.log(data);
+
+            if (res.ok) {
+                this.user = null;
+                this.errors = {};
+                localStorage.removeItem('token');
+                this.router.push({ name: 'profile' });
+            }
+        },
     }
 })

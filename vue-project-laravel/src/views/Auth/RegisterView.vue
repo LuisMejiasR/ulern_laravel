@@ -15,6 +15,10 @@ const formData = reactive ({
     password_confirmation: ''
 });
 
+// eliminando errores al cambiar de pagina
+onMounted(() => {
+    errors.value = {};
+});
 </script>
 
 <template>
