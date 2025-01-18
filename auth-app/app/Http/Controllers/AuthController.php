@@ -38,7 +38,10 @@ class AuthController extends Controller
         // si el usuario no existe o la contraseña no es correcta
         if (!$user || !Hash::check($request->password, $user->password)) {
             return [
-                'message' => 'Las credenciales son incorrectas',
+                //manejando la respuesta en formato error
+                'errors' => [
+                    'email' => ['Las credenciales no coinciden con nuestros registros'],
+                ],
             ];
         }
 
