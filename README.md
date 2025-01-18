@@ -78,7 +78,7 @@ cd ulern_laravel
 
 ## Uso del Proyecto
 1. Accede a la aplicación en tu navegador:
-   - **Frontend**: `http://localhost:3000` (dependiendo de tu configuración de Vue)
+   - **Frontend**: `http://localhost:5173` (dependiendo de tu configuración de Vue)
    - **Backend**: `http://127.0.0.1:8000`
 2. Regístrate como un nuevo usuario en la página de registro.
 3. Inicia sesión con las credenciales creadas.
