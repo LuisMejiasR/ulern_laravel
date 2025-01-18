@@ -1,6 +1,6 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
-export const useAuthStore = defineStore("authStore", {
+export const useAuthStore = defineStore('authStore', {
     state: () => {
         return {
             user: null,
@@ -8,6 +8,24 @@ export const useAuthStore = defineStore("authStore", {
         }
     },
     actions: {
+        // metodo para obtener usuario
+        async getUser() {
+            if (localStorage.getItem('token')) {
+                const res = await fetch('/api/user',
+                {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('token')}`,
+                    },
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    this.user = data;
+                }
+                console.log(data);
+            }
+        },
+
+        // metodo para registrar al usuario
         async authenticate(apiRoute, formData) {
             const res = await fetch(`api/${apiRoute}`, {
                 method: 'post',
@@ -22,6 +40,7 @@ export const useAuthStore = defineStore("authStore", {
                 localStorage.setItem('token', data.token);
                 this.user = data.user;
                 // redirecionar al usuario
+                this.router.push({ name: 'home' });
             }
             console.log(data);
         }
