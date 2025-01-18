@@ -23,10 +23,10 @@
         @apply block text-sm font-medium leading-6 text-slate-900 first-letter:capitalize;
     }
     header {
-        @apply bg-slate-800 shadow-md;
+        @apply bg-slate-800 shadow-md flex items-center justify-between;
     }
     nav {
-        @apply p-5 max-w-screen-lg mx-auto flex items-center justify-between;
+        @apply p-5 max-w-screen-lg flex items-center justify-between;
     }
     main {
         @apply max-w-screen-lg mx-auto;
